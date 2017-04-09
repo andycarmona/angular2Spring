@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: ch.javaee.demo:client:war:0.1.4-SNAPSHOT">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/ch/javaee/demo/client/0.1.4-SNAPSHOT/client-0.1.4-SNAPSHOT.war!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/ch/javaee/demo/client/0.1.4-SNAPSHOT/client-0.1.4-SNAPSHOT-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/ch/javaee/demo/client/0.1.4-SNAPSHOT/client-0.1.4-SNAPSHOT-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

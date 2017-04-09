@@ -15,14 +15,15 @@ import org.springframework.test.web.servlet.MockMvc;
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.mockito.BDDMockito.given;
-import static org.mockito.Matchers.any;
+import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+import static org.junit.Assert.*;
 /**
  * Created by marco on 28.01.17.
  */
+
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = { DavisController.class })
@@ -39,7 +40,7 @@ public class DavisControllerTest {
     public void resultListTest() throws Exception {
 
         String expectedResult = "[{\"year\":2015,\"winner\":\"Marco Team\"}]";
-        given(this.davisService.getResultList()).willReturn(mockedDavisData());
+       // given(this.davisService.getResultList()).willReturn(mockedDavisData());
 
         this.mvc.perform(get("/result_list"))
                 .andExpect(status().isOk())
@@ -48,11 +49,18 @@ public class DavisControllerTest {
     }
 
     @Test
+    public void resultTest(){
+        String expectedResult = "[{\"year\":2015,\"winner\":\"Marco Team\"}]";
+      when(this.davisService.getResultList()).thenReturn( mockedDavisData() );
+      assertEquals(this.davisService.getResultForYear( "2015" ),expectedResult);
+    }
+
+    @Test
     @Ignore
     public void resultYearTest() throws Exception {
 
         String expectedResult = "{\"year\":2015,\"winner\":\"Marco Team\"}";
-        given(this.davisService.getResultForYear(any())).willReturn(mockedDavisData().get(0));
+      //  given(this.davisService.getResultForYear(any())).willReturn(mockedDavisData().get(0));
 
         this.mvc.perform(get("/result_year"))
                 .andExpect(status().isOk())

@@ -1,5 +1,5 @@
 // Component is a decorator imported from @angular/core
-import {Component} from "@angular/core";
+import { Component } from "@angular/core";
 
 // use of the decorator to register the component
 @Component({

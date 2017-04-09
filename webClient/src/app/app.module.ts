@@ -8,6 +8,7 @@ import { HttpModule }    from '@angular/http';
 import {RouterModule, Routes} from '@angular/router';
 
 import {AppComponent} from './app.component';
+import {InfoComponent} from './info/info.component';
 import {DavisComponent} from './davis/davis.component';
 import {HelloWorld} from './hello-world/hello-world.component';
 import {BlogComponent} from './blog/blog.component';
@@ -27,6 +28,7 @@ import {FormsModule} from "@angular/forms";
 
 
 const routes: Routes = [
+    { path: 'info',component:InfoComponent},
     { path: '', component: BlogComponent},
     { path: 'app-hello-world', component: HelloWorld},
     { path: 'app-davis', component:DavisComponent},
@@ -41,7 +43,7 @@ const routes: Routes = [
 
 @NgModule({
   imports:      [BrowserModule, HttpModule, RouterModule.forRoot(routes), FormsModule ],
-  declarations: [AppComponent, DavisComponent, HelloWorld, BlogComponent, MenuComponent, HighlightCodeDirective,
+  declarations: [AppComponent, DavisComponent, HelloWorld, BlogComponent, InfoComponent,MenuComponent, HighlightCodeDirective,
       D3Component, ImageComponent, HighlightComponent, CvMainComponent, CvExperience, CvOldComponent, MonitoringComponent
 ],
   bootstrap:    [AppComponent],

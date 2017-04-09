@@ -29,7 +29,6 @@ public class BlogServiceTest {
     BlogService blogService;
 
     @Test
-    @Ignore
     public void getAllArticlesTest() {
 
         List<Article> articleList = blogService.getArticles();
